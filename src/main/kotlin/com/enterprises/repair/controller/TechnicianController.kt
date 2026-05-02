@@ -1,5 +1,10 @@
-package com.enterprises.repair.technician
+package com.enterprises.repair.controller
 
+import com.enterprises.repair.service.TechnicianService
+import com.enterprises.repair.dto.CreateTechnicianRequest
+import com.enterprises.repair.dto.MarkAttendanceRequest
+import com.enterprises.repair.dto.TechnicianAttendanceResponse
+import com.enterprises.repair.dto.TechnicianResponse
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.DeleteMapping

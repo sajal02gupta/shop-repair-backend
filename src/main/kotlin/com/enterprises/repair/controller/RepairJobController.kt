@@ -1,8 +1,13 @@
-package com.enterprises.repair.job
+package com.enterprises.repair.controller
 
+import com.enterprises.repair.dto.CreateRepairJobRequest
+import com.enterprises.repair.dto.RepairJobResponse
+import com.enterprises.repair.service.RepairJobService
+import com.enterprises.repair.dto.UpdateRepairJobRequest
+import com.enterprises.repair.dto.UpdateRepairStatusRequest
+import com.enterprises.repair.dto.AssignTechnicianRequest
+import com.enterprises.repair.service.TechnicianService
 import jakarta.validation.Valid
-import com.enterprises.repair.technician.AssignTechnicianRequest
-import com.enterprises.repair.technician.TechnicianService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -37,6 +42,12 @@ class RepairJobController(
         @PathVariable id: Long,
         @RequestBody request: UpdateRepairJobRequest,
     ): RepairJobResponse = repairJobService.updateJob(id, request)
+
+    @PatchMapping("/{id}/update-repair-status")
+    fun updateRepairStatus(
+        @PathVariable id: Long,
+        @Valid @RequestBody request: UpdateRepairStatusRequest,
+    ): RepairJobResponse = repairJobService.updateRepairStatus(id, request.status!!)
 
     @PostMapping("/{id}/assign-technician")
     fun assignTechnician(

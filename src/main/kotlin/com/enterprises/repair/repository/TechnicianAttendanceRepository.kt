@@ -1,5 +1,6 @@
-package com.enterprises.repair.technician
+package com.enterprises.repair.repository
 
+import com.enterprises.repair.entity.TechnicianAttendance
 import org.springframework.data.jpa.repository.JpaRepository
 import java.time.LocalDate
 

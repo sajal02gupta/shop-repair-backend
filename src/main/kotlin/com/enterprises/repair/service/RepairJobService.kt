@@ -1,5 +1,13 @@
-package com.enterprises.repair.job
+package com.enterprises.repair.service
 
+import com.enterprises.repair.dto.CreateRepairJobRequest
+import com.enterprises.repair.dto.RepairJobResponse
+import com.enterprises.repair.dto.UpdateRepairJobRequest
+import com.enterprises.repair.dto.toResponse
+import com.enterprises.repair.enums.RepairStatus
+import com.enterprises.repair.enums.ServiceType
+import com.enterprises.repair.entity.RepairJob
+import com.enterprises.repair.repository.RepairJobRepository
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -107,6 +115,22 @@ class RepairJobService(
 
         if (job.technicianAssigned != null && job.status == RepairStatus.CREATED) {
             job.status = RepairStatus.ASSIGNED
+        }
+
+        return repairJobRepository.save(job).toResponse()
+    }
+
+    @Transactional
+    fun updateRepairStatus(id: Long, status: RepairStatus): RepairJobResponse {
+        val job = findJob(id)
+        job.status = status
+
+        if (status == RepairStatus.ASSIGNED && job.assignedDate == null) {
+            job.assignedDate = LocalDate.now()
+        }
+
+        if (status == RepairStatus.COMPLETED && job.completedDate == null) {
+            job.completedDate = LocalDate.now()
         }
 
         return repairJobRepository.save(job).toResponse()

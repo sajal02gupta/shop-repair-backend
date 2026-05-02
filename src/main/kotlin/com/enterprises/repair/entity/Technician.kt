@@ -1,4 +1,4 @@
-package com.enterprises.repair.technician
+package com.enterprises.repair.entity
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity

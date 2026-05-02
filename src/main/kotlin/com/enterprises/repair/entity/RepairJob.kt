@@ -1,5 +1,7 @@
-package com.enterprises.repair.job
+package com.enterprises.repair.entity
 
+import com.enterprises.repair.enums.RepairStatus
+import com.enterprises.repair.enums.ServiceType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.EnumType

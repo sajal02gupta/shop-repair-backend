@@ -1,4 +1,4 @@
-package com.enterprises.repair.job
+package com.enterprises.repair.enums
 
 enum class RepairStatus {
     COMPLETED,

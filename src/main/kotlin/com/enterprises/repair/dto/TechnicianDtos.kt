@@ -1,5 +1,8 @@
-package com.enterprises.repair.technician
+package com.enterprises.repair.dto
 
+import com.enterprises.repair.entity.Technician
+import com.enterprises.repair.entity.TechnicianAttendance
+import com.enterprises.repair.enums.AttendanceStatus
 import jakarta.validation.constraints.NotBlank
 import jakarta.validation.constraints.NotNull
 import java.time.LocalDate

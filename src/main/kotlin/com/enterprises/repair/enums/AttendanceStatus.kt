@@ -1,4 +1,4 @@
-package com.enterprises.repair.technician
+package com.enterprises.repair.enums
 
 enum class AttendanceStatus {
     PRESENT,

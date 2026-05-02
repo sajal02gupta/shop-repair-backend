@@ -1,5 +1,6 @@
-package com.enterprises.repair.technician
+package com.enterprises.repair.entity
 
+import com.enterprises.repair.enums.AttendanceStatus
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.EnumType

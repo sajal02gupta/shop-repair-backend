@@ -1,5 +1,8 @@
-package com.enterprises.repair.job
+package com.enterprises.repair.dto
 
+import com.enterprises.repair.entity.RepairJob
+import com.enterprises.repair.enums.RepairStatus
+import com.enterprises.repair.enums.ServiceType
 import jakarta.validation.constraints.NotBlank
 import jakarta.validation.constraints.NotNull
 import jakarta.validation.constraints.Size
@@ -39,6 +42,11 @@ data class UpdateRepairJobRequest(
     val assignedDate: LocalDate? = null,
     val expectedCompletionDate: LocalDate? = null,
     val completedDate: LocalDate? = null,
+)
+
+data class UpdateRepairStatusRequest(
+    @field:NotNull
+    val status: RepairStatus?,
 )
 
 data class RepairJobResponse(

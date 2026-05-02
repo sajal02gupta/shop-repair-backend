@@ -1,5 +1,6 @@
-package com.enterprises.repair.job
+package com.enterprises.repair.repository
 
+import com.enterprises.repair.entity.RepairJob
 import org.springframework.data.jpa.repository.JpaRepository
 import java.time.LocalDateTime
 

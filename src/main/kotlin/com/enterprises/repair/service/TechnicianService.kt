@@ -1,7 +1,15 @@
-package com.enterprises.repair.technician
+package com.enterprises.repair.service
 
-import com.enterprises.repair.job.RepairJobResponse
-import com.enterprises.repair.job.RepairJobService
+import com.enterprises.repair.dto.RepairJobResponse
+import com.enterprises.repair.dto.CreateTechnicianRequest
+import com.enterprises.repair.dto.MarkAttendanceRequest
+import com.enterprises.repair.entity.Technician
+import com.enterprises.repair.entity.TechnicianAttendance
+import com.enterprises.repair.repository.TechnicianAttendanceRepository
+import com.enterprises.repair.dto.TechnicianAttendanceResponse
+import com.enterprises.repair.repository.TechnicianRepository
+import com.enterprises.repair.dto.TechnicianResponse
+import com.enterprises.repair.dto.toResponse
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
